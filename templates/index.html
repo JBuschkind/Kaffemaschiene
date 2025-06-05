@@ -9,6 +9,13 @@
     </style>
 </head>
 <body>
+	
+    <h1>Wähle ein Element</h1>
+    <button onclick="sendeAuswahl('A')">Element A</button>
+    <button onclick="sendeAuswahl('B')">Element B</button>
+
+    <p id="info"></p>
+
 	<script>
         async function sendeAuswahl(element) {
             const response = await fetch('/interaktion', {
@@ -27,11 +34,5 @@
             }
         }
     </script>
-    <h1>Wähle ein Element</h1>
-    <button onclick="sendeAuswahl('A')">Element A</button>
-    <button onclick="sendeAuswahl('B')">Element B</button>
-
-    <p id="info"></p>
-
 </body>
 </html>
