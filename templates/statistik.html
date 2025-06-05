@@ -1,0 +1,57 @@
+<!-- templates/statistik.html -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Statistik</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        canvas { max-width: 700px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Statistik nach Monat</h1>
+    <canvas id="statistikChart"></canvas>
+
+    <script>
+fetch('/api/statistik')
+    .then(response => response.json())
+    .then(data => {
+        const gruppiert = {};
+        data.forEach(eintrag => {
+            const key = eintrag.chip_id;
+            if (!gruppiert[key]) gruppiert[key] = {};
+            gruppiert[key][eintrag.element] = eintrag.anzahl;
+        });
+
+        const chipIDs = Object.keys(gruppiert).sort();
+        const elemente = [...new Set(data.map(d => d.element))];
+
+        const datasets = elemente.map(el => ({
+            label: el,
+            data: chipIDs.map(ch => gruppiert[ch][el] || 0),
+            borderWidth: 1
+        }));
+
+        new Chart(document.getElementById('statistikChart'), {
+            type: 'bar',
+            data: {
+                labels: chipIDs,
+                datasets: datasets
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { precision: 0 }
+                    }
+                }
+            }
+        });
+    });
+
+    </script>
+</body>
+</html>
