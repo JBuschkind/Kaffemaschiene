@@ -1,0 +1,121 @@
+html, body {
+    margin: 0; 
+    padding: 0%; 
+    height: 100%; 
+    background-color: #001C55;
+    top: 0;
+    overflow: hidden;
+}
+button { 
+    background-color: #E9C46A;
+    border-color: #E9C46A;
+    margin: 10px; 
+    padding: 20px; 
+    border-radius: 25px;
+}
+.option_button{
+    width: 70%;
+    font-size: 2em; 
+}
+.monthly_button{
+    width: 30%;
+    font-size: 1em; 
+}
+
+button:hover{
+    background-color: #710627;
+    color: white;
+    border-color: #710627;
+}
+
+.header {
+    
+    background-color: black; 
+    height: 10%; 
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-size: 5em;
+    top: 0;
+    margin: 0;
+    position: fixed;
+
+}
+.footer {
+    background-color: black; 
+    height: 15%;
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    color: white;
+    text-align: center;
+    font-size: 3em;
+}
+.wrapper{
+    top: 10%;
+    bottom: 10%;
+    width: 100%;
+    height: 70%; 
+    position: relative;
+    color: white;
+    text-align: center;
+    font-size: 3em;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #E9C46A;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 30%;
+}
+
+li {
+display: block;
+flex-grow: 1;
+height: 100%;
+
+}
+
+li a {
+display: block;
+color: black;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+height: 100%;
+}
+
+li a:hover {
+    background-color: #710627;
+    color: white;
+}
+
+li a:active{
+    background-color: #710627;
+    color: white;
+}
+
+h2 { 
+    margin-bottom: 0;
+    font-size: 2em;
+}
+.info_p {
+    margin-top: 0;
+}
+.chip{
+    height: 30%;
+    width: 10%;
+    background-color: red;
+    margin: 5%;
+}
+.chip:hover{
+    background-color: green;
+}
+.buttonhelper, .buttonhelper:hover{
+    background-color: #3d0215;
+    color: white;
+}

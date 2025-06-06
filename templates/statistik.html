@@ -3,17 +3,38 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
     <title>Statistik</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        body { font-family: sans-serif; padding: 20px; }
-        canvas { max-width: 700px; margin-top: 20px; }
+        canvas { 
+            max-width: 700px; 
+            margin-top: 20px; 
+        }
     </style>
 </head>
 <body>
-    <h1>Statistik nach Monat</h1>
-    <canvas id="statistikChart"></canvas>
+    <div class="header">
+        <h3>CoffITI</h3>
+    </div>
 
+    <div class="wrapper"> 
+    <h1>Statistik nach Monat</h1>
+    <button class="monthly_button">letzter Monat</button>
+    <button class="monthly_button">nächster Monat</button>
+    <br>
+    <canvas id="statistikChart"></canvas>
+    </div>
+
+    <div class="footer">
+        <ul>
+            <li><a href="index.html">Auswahl</a></li>
+            <li><a href="favourites.html">Favoriten</a></li>
+            <li><a class="buttonhelper" href="statistik.html">Statistik</a></li>
+        </ul>
+        <div class="chip"></div>
+        <p class="username" id="username"></p>
+    </div>
     <script>
 fetch('/api/statistik')
     .then(response => response.json())
